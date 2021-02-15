@@ -1,15 +1,15 @@
 ### GENERAL SETTINGS ###
 
 # Site settings
-title: SOLID.
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+title: Portfolio personal
+description: "Este es mi rinconcito donde guardo las memorias que hago de lo que hago o de lo que veo que es interesante."
 analytics: #Google analytics code in the format XX-nnnnnnnn-n
 baseurl: "" #important: start with /
-url: "http://yourdomain.com"
+url: "https://javierlobo.github.io"
 
 # Build settings
 markdown: kramdown
-permalink: /:title/
+permalink: /blog/:title/
 excerpt_separator: <!--more--> #use this in posts to define how long the excerpt of the post (that is shown on the Blog page) is
 
 colors:  #in hex code if not noted else
@@ -34,25 +34,41 @@ collections:
 
 # Social networks usernames. Many more available: google-plus, flickr, linkedin, etc). Shown in footer.
 social:
-  - title: dribbble
-    url:
-  - title: facebook
-    url:
-  - title: twitter
-    url:
-  - title: instagram
-    url:
-  - title: tumblr
-    url:
+  - title: Codewars
+    icon: asterisk
+    url: https://www.codewars.com/users/JavierLobo
+  - title: Github
+    icon: github
+    url: https://github.com/JavierLobo
+  - title: Linkedin
+    icon: linkedin
+    url: https://www.linkedin.com/in/javixulobo/
+  - title: Twitter
+    icon: twitter
+    url: #
+  - title: Instagram
+    icon: instagram
+    url: #
+
+shareSocial:
+  - title: Linked In
+    icon: linkedin
+    baseUrl: https://www.linkedin.com/shareArticle?mini=true&url=
+  - title: Facebook
+    icon: facebook
+    baseUrl: https://www.facebook.com/sharer/sharer.php?u=
+  - title: Twitter
+    icon: twitter
+    baseUrl: https://twitter.com/intent/tweet?text=&url=
 
 # Postal address (add as many lines as necessary). Shown in footer and on Contact page.
 address:
   - lines:
-    - Some Ave, 987,
-    - 23890, New York,
-    - United States.
-email: hello@solidtheme.com
-tel: +34 8493-4893
+    - c/
+    - 41008 Sevilla
+    - España
+email: franciscojavier.lobo@gmail.com
+tel: +34 
 
 
 ### GENERAL DATA FOR VARIOUS LOCATIONS ###
