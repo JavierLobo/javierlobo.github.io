@@ -31,7 +31,7 @@ Al final, después de mucho trastear por la red y de pura casualidad dí con una
 
 Bien! Necesitaremos hacer todas las operaciones a través de un terminar por lo que pulsaremos la combinación de teclas ***Ctrl + Alt + T***, o bien, si pulsáis el botón del lanzador y escribís ***Terminal*** o ***Konsole*** aparecerá en la parte superior del panel del lanzador. Como puedes ver en la siguiente imagen. 
 
-[![Lanzador](../assets/img/blog/Lanzador.png "Buscando el terminal escribiendo konsole")](../assets/img/blog/Lanzador.png)
+[![Lanzador](../../assets/img/blog/Lanzador.png "Buscando el terminal escribiendo konsole")](../../assets/img/blog/Lanzador.png)
 
 Una vez que ya lo tengamos abierto necesitaremos tener privilegios de superusuario, esto lo conseguiremos escribiendo ***sudo su*** en el terminal y acto seguido nos pedirá la contraseña del usuario ***root***.
 ```
@@ -159,6 +159,7 @@ SwapFree:       16383224 kB
 
 Si queremos conservar los cambios que hemos realizado y no se pierdan al apagar o reiniciar el equipo, deberemos modificar el archivo ***fstag*** que está alojado en el directorio ***etc*** para eso utilizaremos un editor cualquiera (vi, nano,...) y añadiremos al final la siguiente línea.
 > ***Nota***: Recuerda que ***file_swap16*** es el nombre que yo le he dado al archivo y que tu puedes darle otro.
+
 ```
 /mnt/fichero_swap1 none swap sw 0 0
 ```
