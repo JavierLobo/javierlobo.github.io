@@ -10,18 +10,18 @@ img: portada-jekyll.jpeg
 thumb: jekyll-thumbs.png
 comments: true
 ---
-Seguro que si alguna vez has creado un blog te habrás encontrado con diferentes soluciones de software para poder montarlo. Raro sería si no has acabado utilizando WordPress, Joomla o Drupal. Llegado ese punto te habrás encontrado en más de una ocasión afinando los tiempos de respuesta asociados al acceso al contenido en las bases de datos.
+Seguro que si alguna vez has creado un blog te habrás encontrado con diferentes soluciones de software para poder montarlo y raro sería si no has acabado utilizando alguno de ellos, como son WordPress, Joomla o Drupal. 
 
-Y es que más rápido que servir una página estática no vamos a encontrar nada. Así que alternativas como asociar un CDN (Content Delivery Network) o la conversión a ficheros estáticos de nuestras webs son una gran alternativa o complemento.
+En esta ocasion he escogido algo distinto y son páginas estáticas, las cuales, son más rápidas que cualquier otra generada por un CMS y las podremos versionar con git, ademas de que podremos editarlas desde cualquier dispositivo.
 
-Dentro de la gestión de contenidos mediante plantillas y ficheros estáticos tenemos algunos generadores de contenido como Jekyll.
+Para que esta idea tome forma necesitaremos utilizar _Jekyll_ que nos transformará nuestras páginas en algo bonito y hermoso, tambien añadir que las escribiremos con markdown.
 
 <!--more-->
-# ¿Que es jekyll?
-Jekyll es un **generador de páginas estáticas** para la construcción de webs, auque principalmente está enfocado a blogs, puede usarse para cualquier otra cosa que necesitemos para dar a conocer algo construyendo cualquier tipo de página web. Está escrito en Ruby y fue desarrollado por Tom Preston-Werner, cofundador de GitHub.
+# ¿Que es _jekyll_?
+_Jekyll_ es un **generador de páginas estáticas** para la construcción de webs, auque principalmente está enfocado a blogs, puede usarse para cualquier otra cosa que necesitemos para dar a conocer algo construyendo cualquier tipo de página web. Está escrito en Ruby y fue desarrollado por Tom Preston-Werner, cofundador de GitHub.
 
-# ¿Que podemos hacer con Jekyll?
-Con Jekyll podemos hacer tantas cosas como la tecnología y la imaginación nos permitan:
+# ¿Que podemos hacer con _Jekyll_?
+Con _Jekyll_ podemos hacer tantas cosas como la tecnología y la imaginación nos permitan:
 
 * Crear **páginas web**, **entradas post** o **catalogos de productos para una tienda online**.
 * Agrupar las entradas o post en **categorias**.
@@ -32,14 +32,14 @@ Con Jekyll podemos hacer tantas cosas como la tecnología y la imaginación nos 
 * Podemos crear un **buscador de contenidos**.
 * **Dejar comentarios** añadiendo una caja de **Disqus**.
 
-# Instalando Jekyll
+# Instalando _Jekyll_
 ## Prerequisitos
 Para continuar con esta guía deberás tener:
 > Un usuario ***no root*** con privilegios sudo y que tengas una distribución Ubuntu, Kubuntu o alguna de sus variantes instalada en la máquina que vayas a utilizar.
 
-Una vez que lo tengas todo preparado estarás listo para instalar Jekyll y sus dependencias.
+Una vez que lo tengas todo preparado estarás listo para instalar _Jekyll_ y sus dependencias.
 
-## Primer paso, instalación de Jekyll
+## Primer paso, instalación de _Jekyll_
 Primero actualizaremos la lista de paquetes y sus dependencias para asegurarnos de tener la versión mas reciente.
 
     $ sudo apt update && sudo apt upgrade -y
@@ -62,11 +62,11 @@ Una vez modificado el archivo activaremos las exportaciones ejecutando lo siguie
 
     $ source ~/.bashrc
 
-Una vez completo usaremos el comando ***gem*** para instalar _Jekyll_ y _Bundler_ que administra las dependencias de las gemas. En este punto deberías hacerte un bocata, ya que tardará un rato.
+Una vez completo usaremos el comando ***gem*** para instalar __Jekyll__ y _Bundler_ que administra las dependencias de las gemas. En este punto deberías hacerte un bocata, ya que tardará un rato.
 
     $ gem install jekyll bundler
 
-Hasta aquí la parte de descarga, instalación y configuración de Jekyll, el siguiente paso será la configuración del trafico por el firewall.
+Hasta aquí la parte de descarga, instalación y configuración de _Jekyll_, el siguiente paso será la configuración del trafico por el firewall.
 
 ## Segundo paso, abrir el cortafuegos (firewall)
 Comprobemos si el firewall está habilitado. Si es así, nos aseguraremos de que se permita el tráfico a nuestro sitio y que podamos verlo en un navegador web.
@@ -78,7 +78,7 @@ Si después de ejecutar el comando nos da como respuesta ***inactive*** ejecutar
     $ sudo ufw allow OpenSSH
     $ sudo ufw enable
 
-Dependiendo de cómo haya configurado el firewall es posible que tenga otras reglas establecidas o que no tenga ninguna. Dado que en este caso solo se permite el tráfico SSH, necesitaremos abrir el puerto 4000, el puerto predeterminado para el servidor de desarrollo Jekyll.
+Dependiendo de cómo haya configurado el firewall es posible que tenga otras reglas establecidas o que no tenga ninguna. Dado que en este caso solo se permite el tráfico SSH, necesitaremos abrir el puerto 4000, el puerto predeterminado para el servidor de desarrollo _Jekyll_.
 
     $ sudo ufw allow 4000
 
@@ -99,7 +99,7 @@ Bien!! Ahora vamos a crear el sitio donde nuestra web de desarrollo estará aloj
     $ cd ~
     $ jekyll new miweb
 
-El comando ***new*** de jekyll ejecuta un comando ***bundle install*** para instalar todas las dependencias que requiere el proyecto, después instala un tema llamado _minima_ para que se vea bonito. Al finalizar nos debería ofrecer una respuesta similar a esta:
+El comando ***new*** de _jekyll_ ejecuta un comando ***bundle install*** para instalar todas las dependencias que requiere el proyecto, después instala un tema llamado _minima_ para que se vea bonito. Al finalizar nos debería ofrecer una respuesta similar a esta:
 
     New jekyll site installed in /home/pepito/miweb
 
@@ -120,12 +120,12 @@ Una vez creado el nuevo proyecto con el comando ***new*** deberíamos tener una 
 
 Estos son todos los archivos básicos para que el sitio web funcione. Conforme vayas avanzando en la creación de tu web iras creando mas carpetas y documentos que la enriquecerán.
 
-Jekyll se basa en nombres específicos, patrones de nombres y estructuras de directorios para analizar las diferentes fuentes de contenido y ensamblarlas en un sitio estático. Es importante utilizar la estructura existente y seguir las convenciones de nomenclatura de Jekyll al agregar nuevas publicaciones y páginas.
+_Jekyll_ se basa en nombres específicos, patrones de nombres y estructuras de directorios para analizar las diferentes fuentes de contenido y ensamblarlas en un sitio estático. Es importante utilizar la estructura existente y seguir las convenciones de nomenclatura de _Jekyll_ al agregar nuevas publicaciones y páginas.
 
-## Cuarto paso, iniciar el servidor web de Jekyll
-Jekyll incluye un servidor web bastante ligero diseñado para respaldar el desarrollo del sitio, monitoreando cualquier cambio en los documentos y generando de nuevo el sitio automáticamente.
+## Cuarto paso, iniciar el servidor web de _Jekyll_
+_Jekyll_ incluye un servidor web bastante ligero diseñado para respaldar el desarrollo del sitio, monitoreando cualquier cambio en los documentos y generando de nuevo el sitio automáticamente.
 
-Para arrancar el servidor deberemos ejecutar el comando ***jekyll serve*** dentro de la carpeta principal de nuestro proyecto y en nuestro navegador favorito pondremos la siguiente dirección web: http://localhost:4000
+Para arrancar el servidor deberemos ejecutar el comando ***_jekyll_ serve*** dentro de la carpeta principal de nuestro proyecto y en nuestro navegador favorito pondremos la siguiente dirección web: http://localhost:4000
 
     $ cd ~/miweb
     $ jekyll serve
@@ -143,7 +143,7 @@ Una vez finalizado el arranque del servidor nos ofrecerá una respuesta similar 
         Server address: http://127.0.0.1:4000/
     Server running... press ctrl-c to stop.
 
-Cuando invocamos el comando ***jekyll seve***, jekyll analiza la configuración que le hemos indicado en el documento __config.yml_ y los archivos de contenido y vuelca el resultado en un nuevo directorio llamado __site_ que se convertirá en nuestra web.
+Cuando invocamos el comando ***_jekyll_ seve***, _jekyll_ analiza la configuración que le hemos indicado en el documento __config.yml_ y los archivos de contenido y vuelca el resultado en un nuevo directorio llamado __site_ que se convertirá en nuestra web.
 
     ├── 404.html
     ├── about.markdown
@@ -163,14 +163,14 @@ Cuando invocamos el comando ***jekyll seve***, jekyll analiza la configuración 
         │   └── minima-social-icons.svg
         ├── feed.xml
         ├── index.html
-        └── jekyll
+        └── _jekyll_
             └── update
                 └── 2020
                     └── 11
                         └── 13
-                            └── welcome-to-jekyll.html
+                            └── welcome-to-_jekyll_.html
 
-Es importante que no realicemos cambios directos en la carpeta __site_, ya que, jekyll regenera la carpeta constantemente y los perderíamos irremediablemente.
+Es importante que no realicemos cambios directos en la carpeta __site_, ya que, _jekyll_ regenera la carpeta constantemente y los perderíamos irremediablemente.
 
 Es importante dejar en segundo plano el terminal para que nos muestre información adicional sobre los errores y problemas que pueden surgir durante el desarrollo de nuestra web.
 
@@ -184,4 +184,4 @@ Una vez que todo está funcionando podemos ver nuestra flamante web en el navega
 
 # Fuentes:
 - [https://jekyllrb.com/](https://jekyllrb.com/)
-- [https://es.wikipedia.org/wiki/Jekyll_(computaci%C3%B3n)](https://es.wikipedia.org/wiki/Jekyll_(computaci%C3%B3n))
+- [https://es.wikipedia.org/wiki/_Jekyll__(computaci%C3%B3n)](https://es.wikipedia.org/wiki/Jekyll_(computaci%C3%B3n))
