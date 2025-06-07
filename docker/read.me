@@ -1,0 +1,35 @@
+
+1. **Construir la imagen:**
+
+```sh
+docker build -t mi-jekyll-app -f docker/dockerfile .
+```
+
+2. **Ejecutar el contenedor:**
+
+```sh
+docker run --rm -p 4000:4000 -v $(pwd):/usr/src/app mi-jekyll-app
+```
+Para ver el log del contenedor mientras está en ejecución, primero identifica el ID o nombre del contenedor (si no usas `--rm`). Luego usa:
+
+```sh
+docker logs <nombre_o_id_del_contenedor>
+```
+
+Si ejecutas el contenedor en modo interactivo o en segundo plano (`-d`), por ejemplo:
+
+```sh
+docker run -d -p 4000:4000 -v %cd%:/usr/src/app mi-jekyll-app
+```
+
+Luego puedes ver los logs así:
+
+```sh
+docker logs <nombre_o_id_del_contenedor>
+```
+
+Si quieres ver los logs en tiempo real:
+
+```sh
+docker logs -f <nombre_o_id_del_contenedor>
+```
